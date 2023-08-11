@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>登陆页</title>
+</head>
+<body>
+Welcome to login
+<br>
+<form method="post" action="/doLogin">
+  用户名:<input type="text" name="userName">
+  <br>
+  密码:<input type="text" name="password">
+  <br>
+  <select name="type" >
+    <option value="NORMAL">普通用户</option>
+    <option value="ADMIN">VIP用户</option>
+  </select>
+  <input type="checkbox" name="rememberMe" value="y"/> 记住我
+  <input type="submit" value="提交">
+</form>
+</body>
+</html>
