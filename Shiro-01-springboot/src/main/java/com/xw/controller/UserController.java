@@ -13,9 +13,10 @@ public class UserController {
 
     @GetMapping("/index")
     @RequiresRoles("admin")
-    @RequiresPermissions("user:query")
+    @RequiresPermissions("admin:del")
     public String index() {
         // SecurityUtils.getSubject().checkRole("admin");
+        // SecurityUtils.getSubject().isPermitted("admin:del");
         return "user";
     }
 
