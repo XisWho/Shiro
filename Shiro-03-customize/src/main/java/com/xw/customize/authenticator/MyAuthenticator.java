@@ -1,5 +1,6 @@
 package com.xw.customize.authenticator;
 
+import com.xw.customize.authenticationStrategy.MyAuthenticationStrategy;
 import com.xw.token.UsernamePasswordTypeToken;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -19,6 +20,10 @@ public class MyAuthenticator extends ModularRealmAuthenticator {
 
     @Value("#{${realm.map}}")
     private Map<String, String> realmTypeMap;
+
+    public MyAuthenticator() {
+        this.setAuthenticationStrategy(new MyAuthenticationStrategy());
+    }
 
     @Override
     protected AuthenticationInfo doAuthenticate(AuthenticationToken authenticationToken) throws AuthenticationException {
