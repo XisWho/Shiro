@@ -24,6 +24,14 @@ public class SimpleShiroConfig {
         // 这里注意一下，setAuthenticator需要比setRealms靠前，否则Authenticator中没有保存到Realm，导致doAuthenticate方法中的assertRealmsConfigured()失败
         securityManager.setAuthenticator(myAuthenticator);
         securityManager.setRealms(realms);
+
+//        DefaultWebSessionManager sessionManager = new DefaultWebSessionManager();
+//        sessionManager.setSessionListeners(sessionListeners);
+//        sessionManager.setSessionDAO(redisSessionDAO);
+//        sessionManager.setGlobalSessionTimeout(5000L);
+//        sessionManager.setSessionValidationInterval(6000L);
+//        securityManager.setSessionManager(sessionManager);
+
         return securityManager;
     }
 
