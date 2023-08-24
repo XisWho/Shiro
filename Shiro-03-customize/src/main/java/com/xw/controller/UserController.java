@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UserController {
 
     @GetMapping("/index")
-    @RequiresRoles("admin")
-    @RequiresPermissions("user:query")
+    // @RequiresRoles("admin")
+    // @RequiresPermissions("user:query")
     public String index() {
         // SecurityUtils.getSubject().checkRole("admin");
+        System.out.println("isPermitted=" + SecurityUtils.getSubject().isPermitted("+salary+4+7"));
         return "user";
     }
 

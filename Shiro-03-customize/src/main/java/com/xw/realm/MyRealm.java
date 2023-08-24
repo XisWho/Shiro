@@ -3,6 +3,7 @@ package com.xw.realm;
 import com.xw.token.UsernamePasswordTypeToken;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.realm.AuthenticatingRealm;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.springframework.stereotype.Component;
@@ -11,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Component
-public class MyRealm extends AuthorizingRealm {
+public class MyRealm extends AuthenticatingRealm {
 
     private static Map<String, String> userMap = new HashMap<>();
 
@@ -32,11 +33,6 @@ public class MyRealm extends AuthorizingRealm {
             throw new UnknownAccountException("user not exists");
         }
         return new SimpleAuthenticationInfo(userName, userMap.get(userName), null, getName());
-    }
-
-    @Override
-    protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        return null;
     }
 
     @Override
