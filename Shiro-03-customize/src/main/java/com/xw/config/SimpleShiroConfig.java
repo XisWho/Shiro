@@ -48,6 +48,8 @@ public class SimpleShiroConfig {
         definition.addPathDefinition("/manage/**", "authc");
         // 进入user页面需要admin角色
         // definition.addPathDefinition("/user/**", "roles[\"admin\"]");
+
+        // definition.addPathDefinition("/manage/**", "adminFilter");
         return definition;
     }
 
