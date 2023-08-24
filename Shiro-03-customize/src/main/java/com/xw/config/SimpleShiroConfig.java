@@ -32,6 +32,8 @@ public class SimpleShiroConfig {
 //        sessionManager.setSessionValidationInterval(6000L);
 //        securityManager.setSessionManager(sessionManager);
 
+//        securityManager.setCacheManager(new RedisCacheManager());
+
         return securityManager;
     }
 
