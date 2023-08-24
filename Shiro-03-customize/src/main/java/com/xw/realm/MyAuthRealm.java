@@ -1,5 +1,6 @@
 package com.xw.realm;
 
+import com.xw.customize.credentialsMatcher.MyCredentialsMatcher;
 import com.xw.customize.permission.MyPermissionResolver;
 import com.xw.token.UsernamePasswordTypeToken;
 import org.apache.shiro.authc.*;
@@ -40,6 +41,7 @@ public class MyAuthRealm extends AuthorizingRealm {
     public MyAuthRealm() {
         super();
         this.setPermissionResolver(new MyPermissionResolver());
+        this.setCredentialsMatcher(new MyCredentialsMatcher());
     }
 
     @Override
